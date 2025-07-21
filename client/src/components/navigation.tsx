@@ -54,7 +54,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("home")}
           >
             <div className="text-2xl font-bold text-primary flex items-center">
-              <DroneIcon className="mr-2" />
+              <DroneIcon className="w-8 h-8 mr-3" />
               Venture Sky Co.
             </div>
           </motion.div>
