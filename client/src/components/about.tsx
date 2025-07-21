@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Tag, Shield, Bot } from "lucide-react";
+import { Tag, Shield } from "lucide-react";
+import DroneIcon from "@/components/drone-icon";
 
 export default function About() {
   return (
@@ -65,7 +66,7 @@ export default function About() {
               whileHover={{ scale: 1.1 }}
               className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-xl"
             >
-              <Bot className="text-3xl" />
+              <DroneIcon className="w-8 h-8" />
             </motion.div>
           </motion.div>
         </div>

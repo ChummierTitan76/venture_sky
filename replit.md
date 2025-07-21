@@ -1,8 +1,8 @@
-# SkyVision Drone Services - Aerial Photography Website
+# Venture Sky Co. - Aerial Photography Website
 
 ## Overview
 
-This is a full-stack web application for a professional drone photography and videography business called "SkyVision". The application features a modern, responsive website built with React and TypeScript on the frontend, Express.js on the backend, and uses PostgreSQL with Drizzle ORM for data management. The site showcases aerial photography services, includes a portfolio gallery, service packages, and a contact form for potential clients.
+This is a full-stack web application for a professional drone photography and videography business called "Venture Sky Co." The application features a modern, responsive website built with React and TypeScript on the frontend, Express.js on the backend, and uses PostgreSQL with Drizzle ORM for data management. The site showcases aerial photography services, includes a portfolio gallery, service packages, and a contact form for potential clients.
 
 ## User Preferences
 
@@ -32,13 +32,15 @@ The application follows a modern full-stack architecture with clear separation b
 ## Key Components
 
 ### Frontend Components
-- **Navigation**: Fixed header with smooth scrolling navigation
+- **Navigation**: Fixed header with smooth scrolling navigation and custom drone icon
 - **Hero Section**: Full-screen landing with call-to-action
 - **Gallery**: Interactive portfolio showcase with lightbox functionality
 - **About Section**: Professional background and credentials
 - **Services**: Package offerings with pricing
 - **Contact Form**: Lead capture with validation
 - **Footer**: Additional navigation and company info
+- **Custom Drone Icon**: Wireframe-style DJI Inspire 2 drone SVG icon
+- **Theme Toggle**: Light/dark mode switcher with smooth animations
 
 ### Backend Services
 - **Contact API**: Handles form submissions and stores inquiries
@@ -99,3 +101,12 @@ The application uses optimistic updates for better user experience and implement
 - Database URL configuration via environment variables
 
 The architecture prioritizes developer experience with TypeScript throughout, fast development cycles with hot reloading, and production readiness with optimized builds and proper error handling.
+
+## Recent Changes
+
+### January 2025
+- Updated company branding from "SkyVision" to "Venture Sky Co."
+- Created custom wireframe-style drone icon based on DJI Inspire 2 design
+- Added light/dark theme toggle with smooth animations and localStorage persistence
+- Migrated from in-memory storage to PostgreSQL database with Drizzle ORM
+- Updated all contact information and branding throughout the application

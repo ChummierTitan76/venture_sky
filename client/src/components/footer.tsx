@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bot } from "lucide-react";
+import DroneIcon from "@/components/drone-icon";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -26,8 +26,8 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center mb-4">
-              <Bot className="text-primary text-2xl mr-3" />
-              <span className="text-2xl font-bold">SkyVision</span>
+              <DroneIcon className="text-primary text-2xl mr-3" />
+              <span className="text-2xl font-bold">Venture Sky Co.</span>
             </div>
             <p className="text-gray-300">
               Professional aerial photography and videography services capturing the world from above.
@@ -94,14 +94,14 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-300">
               <p>(555) 123-4567</p>
-              <p>hello@skyvisiondrones.com</p>
+              <p>hello@ventureskyco.com</p>
               <p>San Francisco Bay Area</p>
             </div>
           </motion.div>
         </div>
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; {currentYear} SkyVision Bot Services. All rights reserved.</p>
+          <p>&copy; {currentYear} Venture Sky Co. All rights reserved.</p>
         </div>
       </div>
     </footer>

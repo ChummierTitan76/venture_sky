@@ -103,7 +103,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center">
                   <Mail className="text-primary text-xl mr-4" />
-                  <span className="text-lg">hello@skyvisiondrones.com</span>
+                  <span className="text-lg">hello@ventureskyco.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="text-primary text-xl mr-4" />

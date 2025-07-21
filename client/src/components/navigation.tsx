@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Bot } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "@/components/theme-toggle";
+import DroneIcon from "@/components/drone-icon";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,8 +54,8 @@ export default function Navigation() {
             onClick={() => scrollToSection("home")}
           >
             <div className="text-2xl font-bold text-primary flex items-center">
-              <Bot className="mr-2" />
-              SkyVision
+              <DroneIcon className="mr-2" />
+              Venture Sky Co.
             </div>
           </motion.div>
 
