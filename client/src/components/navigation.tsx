@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/components/theme-toggle";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,14 +74,18 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-textPrimary hover:text-primary focus:outline-none focus:text-primary transition-colors duration-200"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+          {/* Theme Toggle and Mobile menu button */}
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-textPrimary hover:text-primary focus:outline-none focus:text-primary transition-colors duration-200"
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
