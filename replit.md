@@ -44,7 +44,7 @@ The application follows a modern full-stack architecture with clear separation b
 - **Contact API**: Handles form submissions and stores inquiries
 - **Gallery API**: Serves portfolio images and metadata
 - **Services API**: Provides package information
-- **Storage Layer**: Abstracted data access with in-memory fallback
+- **Storage Layer**: PostgreSQL database with Drizzle ORM for persistent data
 
 ### Database Schema
 - **users**: Authentication (prepared for future admin features)

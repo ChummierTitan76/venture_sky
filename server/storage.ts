@@ -1,4 +1,6 @@
 import { users, contacts, galleryItems, servicePackages, type User, type InsertUser, type Contact, type InsertContact, type GalleryItem, type InsertGalleryItem, type ServicePackage, type InsertServicePackage } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -156,7 +158,9 @@ export class MemStorage implements IStorage {
   async createContact(insertContact: InsertContact): Promise<Contact> {
     const id = this.currentContactId++;
     const contact: Contact = { 
-      ...insertContact, 
+      ...insertContact,
+      project: insertContact.project || null,
+      budget: insertContact.budget || null,
       id,
       createdAt: new Date()
     };
@@ -181,4 +185,49 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+// DatabaseStorage implementation
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createContact(insertContact: InsertContact): Promise<Contact> {
+    const [contact] = await db
+      .insert(contacts)
+      .values(insertContact)
+      .returning();
+    return contact;
+  }
+
+  async getContacts(): Promise<Contact[]> {
+    return await db.select().from(contacts);
+  }
+
+  async getGalleryItems(): Promise<GalleryItem[]> {
+    return await db.select().from(galleryItems);
+  }
+
+  async getFeaturedGalleryItems(): Promise<GalleryItem[]> {
+    return await db.select().from(galleryItems).where(eq(galleryItems.featured, true));
+  }
+
+  async getServicePackages(): Promise<ServicePackage[]> {
+    return await db.select().from(servicePackages);
+  }
+}
+
+export const storage = new DatabaseStorage();
