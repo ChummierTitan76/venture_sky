@@ -30,6 +30,16 @@ A modern, responsive website for Venture Sky Co., showcasing professional drone 
 
 ## Quick Start
 
+### For Windows Users:
+See [WINDOWS_SETUP.md](./WINDOWS_SETUP.md) for detailed Windows instructions.
+
+**Quick Windows Setup:**
+1. Clone in VS Code: `Ctrl+Shift+P` → "Git: Clone" → Enter repo URL
+2. Run setup: Double-click `setup.bat`
+3. Edit `.env` file with your database URL
+4. Start server: Double-click `dev.bat`
+
+### For Mac/Linux:
 1. Clone the repository:
    ```bash
    git clone https://github.com/ChummierTitan76/venture_sky.git
